@@ -1,37 +1,39 @@
-import * as esbuild from "esbuild-wasm";
-import { unpkgPathPlugin } from "./plugins/unpkg-path-plugin";
-import { fetchPlugin } from "./plugins/fetch-plugin";
+import * as esbuild from 'esbuild-wasm';
+import { unpkgPathPlugin } from './plugins/unpkg-path-plugin';
+import { fetchPlugin } from './plugins/fetch-plugin';
 
 let service: esbuild.Service;
 const bundle = async (rawCode: string) => {
   if (!service) {
     service = await esbuild.startService({
       worker: true,
-      wasmURL: "https://unpkg.com/esbuild-wasm@0.8.27/esbuild.wasm",
+      wasmURL: 'https://unpkg.com/esbuild-wasm@0.8.27/esbuild.wasm',
     });
   }
 
   try {
     const result = await service.build({
-      entryPoints: ["index.js"],
+      entryPoints: ['index.js'],
       bundle: true,
       write: false,
       plugins: [unpkgPathPlugin(), fetchPlugin(rawCode)],
       define: {
-        "process.env.NODE_ENV": '"production"',
-        global: "window",
+        'process.env.NODE_ENV': '"production"',
+        global: 'window',
       },
+      jsxFactory: '_React.createElement',
+      jsxFragment: '_React.Fragment',
     });
 
     const resultData: { code: string; err: string } = {
       code: result.outputFiles[0].text,
-      err: "",
+      err: '',
     };
     return resultData;
   } catch (err: any) {
     return {
-      err: err.message,
-      code: "",
+      err: String(err.message),
+      code: '',
     };
   }
 };
