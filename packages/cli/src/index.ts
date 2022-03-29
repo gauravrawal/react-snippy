@@ -1,3 +1,6 @@
-import serve from 'local-api';
+import { Command, program } from 'commander';
+import { serveCommand } from './commands/serve';
 
-serve();
+program.addCommand(serveCommand);
+
+program.parse(process.argv);
