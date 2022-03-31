@@ -1,2 +1,0 @@
-(this.webpackJsonpsnippy=this.webpackJsonpsnippy||[]).push([[462],{639:function(s,n){!function(s){var n=s.util.clone(s.languages.typescript);s.languages.tsx=s.languages.extend("jsx",n);var a=s.languages.tsx.tag;a.pattern=RegExp(/(^|[^\w$]|(?=<\/))/.source+"(?:"+a.pattern.source+")",a.pattern.flags),a.lookbehind=!0}(Prism)}}]);
-//# sourceMappingURL=462.f8f10efe.chunk.js.map
