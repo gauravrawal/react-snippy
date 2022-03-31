@@ -1,0 +1,2 @@
+(this["webpackJsonp@jsnote-gr/local-client"]=this["webpackJsonp@jsnote-gr/local-client"]||[]).push([[463],{640:function(t,e){!function(t){var e=t.util.clone(t.languages.typescript);t.languages.tsx=t.languages.extend("jsx",e);var n=t.languages.tsx.tag;n.pattern=RegExp("(^|[^\\w$]|(?=</))(?:"+n.pattern.source+")",n.pattern.flags),n.lookbehind=!0}(Prism)}}]);
+//# sourceMappingURL=463.ce5b77e3.chunk.js.map

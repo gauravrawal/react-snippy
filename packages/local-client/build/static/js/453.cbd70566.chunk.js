@@ -1,0 +1,2 @@
+(this["webpackJsonp@jsnote-gr/local-client"]=this["webpackJsonp@jsnote-gr/local-client"]||[]).push([[453],{630:function(t,e){Prism.languages["t4-vb"]=Prism.languages["t4-templating"].createT4("vbnet")}}]);
+//# sourceMappingURL=453.cbd70566.chunk.js.map
